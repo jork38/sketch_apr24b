@@ -106,6 +106,17 @@ void Valve6() // hier zal de 6de vloeistof mee worden aangestuurd
   delay(uitloopDelay);
 }
 
+void EndFunction() // deze functie wacht tot het glas weg is voor dat deze het programma laat verder lopen
+{
+    digitalWrite(inWerking, LOW);
+    digitalWrite(klaar, HIGH);
+  while (Debounce(sensorGlas) == HIGH); {
+    
+  }
+  if (Debounce(sensorGlas) == LOW) {
+    digitalWrite(klaar, LOW);
+  }
+}
 
 void setup() {
   // hier komen alle ingangen
@@ -249,8 +260,8 @@ void loop() {
           else {
             break;
           }
-         case 15:
-           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+        case 15:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
             Valve1();
             var = 16;
           }
@@ -281,16 +292,66 @@ void loop() {
           else {
             break;
           }
+        case 19:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 20;
+          }
+          else {
+            break;
+          }
+        case 20:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 21;
+          }
+          else {
+            break;
+          }
+        case 21:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 22;
+          }
+          else {
+            break;
+          }
+        case 22:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 23;
+          }
+          else {
+            break;
+          }
+        case 24:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 25;
+          }
+          else {
+            break;
+          }
+        case 25:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 26;
+          }
+          else {
+            break;
+          }
+        case 26:
+          EndFunction();
+          break;
       }
-      digitalWrite(inWerking, LOW);
     }
-    else if ((Debounce(keuze2) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)){
+    else if ((Debounce(keuze2) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
       digitalWrite(inWerking, HIGH);
       Valve2();
       digitalWrite(inWerking, LOW);
     }
-    else if ((Debounce(keuze3) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)){
+    else if ((Debounce(keuze3) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
       digitalWrite(inWerking, HIGH);
       Valve3();
