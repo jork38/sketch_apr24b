@@ -348,14 +348,406 @@ void loop() {
     else if ((Debounce(keuze2) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
       digitalWrite(inWerking, HIGH);
-      Valve2();
-      digitalWrite(inWerking, LOW);
+            int var = 1;
+      switch (var) {
+        case 1:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 2;
+          }
+          else {
+            break;
+          }
+        case 2:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 3;
+          }
+          else {
+            break;
+          }
+        case 3:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 4;
+          }
+          else {
+            break;
+          }
+        case 4:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 5;
+          }
+          else {
+            break;
+          }
+        case 5:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 6;
+          }
+          else {
+            break;
+          }
+        case 6:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 7;
+          }
+          else {
+            break;
+          }
+        case 7:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 8;
+          }
+          else {
+            break;
+          }
+        case 8:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 9;
+          }
+          else {
+            break;
+          }
+        case 9:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 10;
+          }
+          else {
+            break;
+          }
+        case 10:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 11;
+          }
+          else {
+            break;
+          }
+        case 11:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 12;
+          }
+          else {
+            break;
+          }
+        case 12:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 13;
+          }
+          else {
+            break;
+          }
+        case 13:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 14;
+          }
+          else {
+            break;
+          }
+        case 14:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 15;
+          }
+          else {
+            break;
+          }
+        case 15:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 16;
+          }
+          else {
+            break;
+          }
+        case 16:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 17;
+          }
+          else {
+            break;
+          }
+        case 17:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 18;
+          }
+          else {
+            break;
+          }
+        case 18:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 19;
+          }
+          else {
+            break;
+          }
+        case 19:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 20;
+          }
+          else {
+            break;
+          }
+        case 20:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 21;
+          }
+          else {
+            break;
+          }
+        case 21:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 22;
+          }
+          else {
+            break;
+          }
+        case 22:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 23;
+          }
+          else {
+            break;
+          }
+        case 24:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 25;
+          }
+          else {
+            break;
+          }
+        case 25:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 26;
+          }
+          else {
+            break;
+          }
+        case 26:
+          EndFunction();
+          break;
+      }
     }
     else if ((Debounce(keuze3) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
       digitalWrite(inWerking, HIGH);
-      Valve3();
-      digitalWrite(inWerking, LOW);
+            int var = 1;
+      switch (var) {
+        case 1:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 2;
+          }
+          else {
+            break;
+          }
+        case 2:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 3;
+          }
+          else {
+            break;
+          }
+        case 3:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 4;
+          }
+          else {
+            break;
+          }
+        case 4:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 5;
+          }
+          else {
+            break;
+          }
+        case 5:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 6;
+          }
+          else {
+            break;
+          }
+        case 6:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 7;
+          }
+          else {
+            break;
+          }
+        case 7:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 8;
+          }
+          else {
+            break;
+          }
+        case 8:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 9;
+          }
+          else {
+            break;
+          }
+        case 9:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 10;
+          }
+          else {
+            break;
+          }
+        case 10:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 11;
+          }
+          else {
+            break;
+          }
+        case 11:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 12;
+          }
+          else {
+            break;
+          }
+        case 12:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 13;
+          }
+          else {
+            break;
+          }
+        case 13:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 14;
+          }
+          else {
+            break;
+          }
+        case 14:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 15;
+          }
+          else {
+            break;
+          }
+        case 15:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 16;
+          }
+          else {
+            break;
+          }
+        case 16:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 17;
+          }
+          else {
+            break;
+          }
+        case 17:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 18;
+          }
+          else {
+            break;
+          }
+        case 18:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 19;
+          }
+          else {
+            break;
+          }
+        case 19:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 20;
+          }
+          else {
+            break;
+          }
+        case 20:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 21;
+          }
+          else {
+            break;
+          }
+        case 21:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 22;
+          }
+          else {
+            break;
+          }
+        case 22:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 23;
+          }
+          else {
+            break;
+          }
+        case 24:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 25;
+          }
+          else {
+            break;
+          }
+        case 25:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            // Valve1();
+            var = 26;
+          }
+          else {
+            break;
+          }
+        case 26:
+          EndFunction();
+          break;
+      }
     }
     else {
       digitalWrite(inWerking, LOW);
