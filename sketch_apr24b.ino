@@ -17,13 +17,13 @@ const int klaar = 13; //op deze pin is het lampje "Klaar" aangesloten
 
 // Hier komen alle wachttijden
 const int DebounceDelay = 25;  // dit is de Debouncedelay van ALLE ingangen
-const int VloeistofDelay1 = 2000;  // Dit is de wachttijd van de 1ste vloeistof
-const int VloeistofDelay2 = 2000;  // Dit is de wachttijd van de 2de vloeistof
-const int VloeistofDelay3 = 2000;  // Dit is de wachttijd van de 3de vloeistof
-const int VloeistofDelay4 = 2000;  // Dit is de wachttijd van de 4de vloeistof
-const int VloeistofDelay5 = 2000;  // Dit is de wachttijd van de 5de vloeistof
-const int VloeistofDelay6 = 2000;  // Dit is de wachttijd van de 6de vloeistof
-
+const int VloeistofDelay1 = 200;  // Dit is de wachttijd van de 1ste vloeistof
+const int VloeistofDelay2 = 200;  // Dit is de wachttijd van de 2de vloeistof
+const int VloeistofDelay3 = 200;  // Dit is de wachttijd van de 3de vloeistof
+const int VloeistofDelay4 = 200;  // Dit is de wachttijd van de 4de vloeistof
+const int VloeistofDelay5 = 200;  // Dit is de wachttijd van de 5de vloeistof
+const int VloeistofDelay6 = 200;  // Dit is de wachttijd van de 6de vloeistof
+const int uitloopDelay = 500; // dit is de tijd die de drenk krijgt om uit de darm te lopen
 
 // hier onder komen alle functies
 
@@ -57,47 +57,53 @@ boolean Debounce(int drukknop)
   }
 }
 
-void Valve0() // hier gaat de 1ste vloeistof mee worden aangestuurd
+void Valve1() // hier gaat de 1ste vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof1, HIGH);
   delay(VloeistofDelay1);
   digitalWrite(Vloeistof1, LOW);
+  delay(uitloopDelay);
   // de vloeistof wordt voor de tijd van "VloeistofDelay1" aangestuurd
 }
 
-void Valve1() // hier gaat de 2de vloeistof mee worden aangestuurd
+void Valve2() // hier gaat de 2de vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof2, HIGH);
   delay(VloeistofDelay2);
   digitalWrite(Vloeistof2, LOW);
+  delay(uitloopDelay);
 }
 
-void Valve2() // hier gaat de 3de vloeistof mee worden aangestuurd
+void Valve3() // hier gaat de 3de vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof3, HIGH);
   delay(VloeistofDelay3);
   digitalWrite(Vloeistof3, LOW);
+  delay(uitloopDelay);
 }
 
-void Valve3() // hier zal de 4de vloeistof mee worden aangestuurd
+void Valve4() // hier zal de 4de vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof4, HIGH);
   delay(VloeistofDelay4);
   digitalWrite(Vloeistof4, LOW);
+  delay(uitloopDelay);
 }
 
-void Valve4() // hier zal de 5de vloeistof mee worden aangestuurd
+void Valve5() // hier zal de 5de vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof5, HIGH);
   delay(VloeistofDelay5);
   digitalWrite(Vloeistof5, LOW);
+  delay(uitloopDelay);
 }
 
-void Valve5() // hier zal de 6de vloeistof mee worden aangestuurd
+void Valve6() // hier zal de 6de vloeistof mee worden aangestuurd
 {
   digitalWrite(Vloeistof6, HIGH);
   delay(VloeistofDelay6);
   digitalWrite(Vloeistof6, LOW);
+  delay(uitloopDelay);
 }
 
 
@@ -129,7 +135,153 @@ void loop() {
     if ((Debounce(keuze1) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
       digitalWrite(inWerking, HIGH);
-      Valve1();
+      int var = 1;
+      switch (var) {
+        case 1:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 2;
+          }
+          else {
+            break;
+          }
+        case 2:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 3;
+          }
+          else {
+            break;
+          }
+        case 3:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 4;
+          }
+          else {
+            break;
+          }
+        case 4:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 5;
+          }
+          else {
+            break;
+          }
+        case 5:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 6;
+          }
+          else {
+            break;
+          }
+        case 6:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 7;
+          }
+          else {
+            break;
+          }
+        case 7:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 8;
+          }
+          else {
+            break;
+          }
+        case 8:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve3();
+            var = 9;
+          }
+          else {
+            break;
+          }
+        case 9:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 10;
+          }
+          else {
+            break;
+          }
+        case 10:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve2();
+            var = 11;
+          }
+          else {
+            break;
+          }
+        case 11:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 12;
+          }
+          else {
+            break;
+          }
+        case 12:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 13;
+          }
+          else {
+            break;
+          }
+        case 13:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 14;
+          }
+          else {
+            break;
+          }
+        case 14:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve5();
+            var = 15;
+          }
+          else {
+            break;
+          }
+         case 15:
+           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve1();
+            var = 16;
+          }
+          else {
+            break;
+          }
+        case 16:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 17;
+          }
+          else {
+            break;
+          }
+        case 17:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 18;
+          }
+          else {
+            break;
+          }
+        case 18:
+          if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+            Valve6();
+            var = 19;
+          }
+          else {
+            break;
+          }
+      }
       digitalWrite(inWerking, LOW);
     }
     else if ((Debounce(keuze2) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)){
