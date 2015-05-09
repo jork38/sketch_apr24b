@@ -11,19 +11,19 @@ const int Vloeistof3 = 7; //op deze pin is de 3de vloeistof aangesloten
 const int Vloeistof4 = 8; //op deze pin is de 4de vloeistof aangesloten
 const int Vloeistof5 = 9; // op deze pin is de 5de vloeistof aangesloten
 const int Vloeistof6 = 10; // op deze pin is de 6de vloeistof aangesloten
-const int klaarVoorStart = 11; //op deze pin is het lampje "Klaar Voor Start" aangesloten
-const int inWerking = 12; //op deze pin is het lampje"In Werking" aangesloten
-const int klaar = 13; //op deze pin is het lampje "Klaar" aangesloten
+const int klaarVoorStart = 11; //op deze pin is het lampje "Klaar Voor Start" aangesloten (groen)
+const int inWerking = 12; //op deze pin is het lampje"In Werking" aangesloten (root)
+const int klaar = 13; //op deze pin is het lampje "Klaar" aangesloten (blauw)
 
 // Hier komen alle wachttijden
-const int DebounceDelay = 25;  // dit is de Debouncedelay van ALLE ingangen
-const int VloeistofDelay1 = 200;  // Dit is de wachttijd van de 1ste vloeistof
-const int VloeistofDelay2 = 200;  // Dit is de wachttijd van de 2de vloeistof
-const int VloeistofDelay3 = 200;  // Dit is de wachttijd van de 3de vloeistof
-const int VloeistofDelay4 = 200;  // Dit is de wachttijd van de 4de vloeistof
-const int VloeistofDelay5 = 200;  // Dit is de wachttijd van de 5de vloeistof
-const int VloeistofDelay6 = 200;  // Dit is de wachttijd van de 6de vloeistof
-const int uitloopDelay = 500; // dit is de tijd die de drenk krijgt om uit de darm te lopen
+const int DebounceDelay = 10;  // dit is de Debouncedelay van ALLE ingangen
+const int VloeistofDelay1 = 2000;  // Dit is de wachttijd van de 1ste vloeistof
+const int VloeistofDelay2 = 2000;  // Dit is de wachttijd van de 2de vloeistof
+const int VloeistofDelay3 = 2000;  // Dit is de wachttijd van de 3de vloeistof
+const int VloeistofDelay4 = 2000;  // Dit is de wachttijd van de 4de vloeistof
+const int VloeistofDelay5 = 2000;  // Dit is de wachttijd van de 5de vloeistof
+const int VloeistofDelay6 = 2000;  // Dit is de wachttijd van de 6de vloeistof
+const int uitloopDelay = 1000; // dit is de tijd die de drenk krijgt om uit de darm te lopen
 
 // hier onder komen alle functies
 
@@ -141,7 +141,7 @@ void setup() {
 
 
 void loop() {
-  if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
+  if ((digitalRead(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
     digitalWrite(klaarVoorStart, HIGH);
     if ((Debounce(keuze1) == HIGH) && (Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
       digitalWrite(klaarVoorStart, LOW);
@@ -158,7 +158,7 @@ void loop() {
           }
         case 2:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve1();
+            //Valve1();
             var = 3;
           }
           else {
@@ -166,7 +166,7 @@ void loop() {
           }
         case 3:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve1();
+            //Valve1();
             var = 4;
           }
           else {
@@ -174,7 +174,7 @@ void loop() {
           }
         case 4:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve1();
+            //Valve1();
             var = 5;
           }
           else {
@@ -182,7 +182,7 @@ void loop() {
           }
         case 5:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve1();
+            //Valve1();
             var = 6;
           }
           else {
@@ -190,7 +190,7 @@ void loop() {
           }
         case 6:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve3();
+            //Valve3();
             var = 7;
           }
           else {
@@ -198,7 +198,7 @@ void loop() {
           }
         case 7:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve3();
+            //Valve3();
             var = 8;
           }
           else {
@@ -206,7 +206,7 @@ void loop() {
           }
         case 8:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve3();
+            //Valve3();
             var = 9;
           }
           else {
@@ -214,7 +214,7 @@ void loop() {
           }
         case 9:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve2();
+            //Valve2();
             var = 10;
           }
           else {
@@ -222,7 +222,7 @@ void loop() {
           }
         case 10:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve2();
+            //Valve2();
             var = 11;
           }
           else {
@@ -230,7 +230,7 @@ void loop() {
           }
         case 11:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve5();
+            //Valve5();
             var = 12;
           }
           else {
@@ -238,7 +238,7 @@ void loop() {
           }
         case 12:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve5();
+            //Valve5();
             var = 13;
           }
           else {
@@ -246,7 +246,7 @@ void loop() {
           }
         case 13:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve5();
+            //Valve5();
             var = 14;
           }
           else {
@@ -254,7 +254,7 @@ void loop() {
           }
         case 14:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve5();
+            //Valve5();
             var = 15;
           }
           else {
@@ -262,7 +262,7 @@ void loop() {
           }
         case 15:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve1();
+            //Valve1();
             var = 16;
           }
           else {
@@ -270,7 +270,7 @@ void loop() {
           }
         case 16:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve6();
+            //Valve6();
             var = 17;
           }
           else {
@@ -278,7 +278,7 @@ void loop() {
           }
         case 17:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve6();
+            //Valve6();
             var = 18;
           }
           else {
@@ -286,7 +286,7 @@ void loop() {
           }
         case 18:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            Valve6();
+            //Valve6();
             var = 19;
           }
           else {
@@ -294,7 +294,7 @@ void loop() {
           }
         case 19:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve1();
             var = 20;
           }
           else {
@@ -302,7 +302,7 @@ void loop() {
           }
         case 20:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve2();
             var = 21;
           }
           else {
@@ -310,7 +310,7 @@ void loop() {
           }
         case 21:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve3();
             var = 22;
           }
           else {
@@ -318,7 +318,7 @@ void loop() {
           }
         case 22:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve4();
             var = 23;
           }
           else {
@@ -326,7 +326,7 @@ void loop() {
           }
         case 24:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve5();
             var = 25;
           }
           else {
@@ -334,7 +334,7 @@ void loop() {
           }
         case 25:
           if ((Debounce(Stop) == LOW) && (Debounce(sensorGlas) == HIGH)) {
-            // Valve1();
+            Valve6();
             var = 26;
           }
           else {
